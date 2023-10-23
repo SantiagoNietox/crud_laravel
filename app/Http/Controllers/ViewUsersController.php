@@ -99,18 +99,6 @@ class ViewUsersController extends Controller
     }
 
 
-    public function search(Request $request)
-{
-    $query = $request->input('query');
-
-    $results = Usuario::where('name', 'like', "%$query%")
-        ->orWhere('email', 'like', "%$query%")
-        ->orWhere('username', 'like', "%$query%")
-        ->get();
-
-    return response()->json($results);
-}
-
 
 
    

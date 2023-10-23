@@ -38,9 +38,16 @@
                                 <input type="number" class="form-control" name="age" value="{{$users->age}}" required>
                             </div>
                             <div class="form-group">
-                                <label for="cantidad">sexo:</label>
-                                <input type="text" class="form-control" name="sexo" value="{{$users->sexo}}" required>
+                                <label for="sexo">Género:</label>
+                                <select class="form-control" id="sexo" name="sexo" required>
+                                    <option value="0" selected>Seleccione una opcion</option>
+                                    <option value="Masculino" {{ $users->sexo === 'Masculino' ? 'selected' : '' }}>Masculino</option>
+                                    <option value="Femenino" {{ $users->sexo === 'Femenino' ? 'selected' : '' }}>Femenino</option>
+                                    <option value="Otro" {{$users-> sexo === 'Otro'? 'selected': ''}}>Otro</option>
+                                </select>
                             </div>
+
+
                             <div class="form-group" id="divs">
                                 <label for="cantidad">Direccion:</label>
                                 <input type="text" class="form-control" name="address" value="{{$users->address}}" required>
